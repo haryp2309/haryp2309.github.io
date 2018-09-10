@@ -1,7 +1,7 @@
 /* haryp.css */
       @font-face {
 	  font-family: GoogleProductSans;
-	  src: url(fonts/GoogleProductSans.woff2) format('woff2')
+	  src: url(fonts/GoogleProductSans.woff2) format('woff2');
 	  }
 	  
 	  @font-face {
