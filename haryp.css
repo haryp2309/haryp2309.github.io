@@ -13,10 +13,11 @@
 	  font-family: "GoogleProductSans", "Arial";
 	  background-image:url("wallpaper.jpg");
 	  padding-top:0px;
+	  color:white;
 	  }
 	  
 	  #navbar {
-	  background-color: #f2f2f2;
+	  background-color: #1f1f1f;
 	  padding-top: 10px;
 	  padding-bottom: 10px;
 	  position: fixed;
@@ -29,7 +30,6 @@
 	  top:0px;
 	  right: 0px;
 	  left: 0px;
-	  opacity:0.8;
 	  }
 	  
 	  
@@ -65,3 +65,44 @@
 	 height: 100px;
 	 text-align: right;
 	 }
+	 
+	 #container-1 {
+		 position:absolute;
+		 top: 100px;
+		 left:10%;
+		 margin-bottom: 10px;
+		 width: 80%;
+		 margin: auto;
+		 padding:20px;
+		 background-color: #191919;
+		 opacity: 0.9;
+		 box-shadow:-20px 0px 20px 5px rgba(0,0,0,0.38), 20px 0px 20px 5px rgba(0,0,0,0.38);
+//		 height: 100%;
+	 }
+	 
+#fb {
+	width:33%;
+	overflow:auto;
+	text-align:center;
+	margin: 0 0 0 0;
+	position:relative;
+	float:left;
+	}
+	
+#snap {
+	width:33%;
+	overflow:auto;
+	text-align:center;
+	margin: 0 0 0 0;
+	position:relative;
+	float:center;
+	}
+	
+#insta {
+	width:33%;
+	overflow:auto;
+	text-align:center;
+	margin: 0 0 0 0;
+	position:relative;
+	float:right;
+	}
