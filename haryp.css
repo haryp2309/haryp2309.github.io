@@ -79,6 +79,10 @@
 		 box-shadow:-20px 0px 20px 5px rgba(0,0,0,0.38), 20px 0px 20px 5px rgba(0,0,0,0.38);
 //		 height: 100%;
 	 }
+
+#container-1-1-social-media {
+	margin-top:10px;
+}
 	 
 #fb {
 	width:33%;
@@ -95,7 +99,7 @@
 	text-align:center;
 	margin: 0 0 0 0;
 	position:relative;
-	float:center;
+	display: inline-block;
 	}
 	
 #insta {
