@@ -16,10 +16,11 @@
 	  }
 	  
 	  hr {
-		  margin:20px;
+		  margin:30px 50px;
 		  height:1px;
 		  border:none;
 		  background-color:rgb(255,255,255);
+		  
 	  }
 	  
 	  #navbar {
@@ -79,14 +80,14 @@
 		 margin-bottom: 10px;
 		 width: 80%;
 		 margin: auto;
-		 padding:20px;
+		 padding:20px 40px;
 		 background-color: rgba(25, 25, 25, 0.9);
 		 box-shadow:-20px 0px 20px 5px rgba(0,0,0,0.38), 20px 0px 20px 5px rgba(0,0,0,0.38);
 //		 height: 100%;
 	 }
 
 #container-1-1-social-media {
-	margin-top:10px;
+	margin-top:20px;
 }
 
 #container-1-1-social-media img {
@@ -101,6 +102,7 @@
 	margin: 0 0 0 0;
 	position:relative;
 	float:left;
+	overflow:hidden;
 	}
 	
 #snap {
@@ -110,6 +112,7 @@
 	margin: 0 0 0 0;
 	position:relative;
 	display: inline-block;
+	overflow:hidden;
 	}
 	
 #insta {
@@ -119,4 +122,5 @@
 	margin: 0 0 0 0;
 	position:relative;
 	float:right;
+	overflow:hidden;
 	}
