@@ -11,6 +11,10 @@
 	  body {
 	  font-family: "GoogleProductSans", "Arial";
 	  background-image:url("images/wallpaper.jpg");
+	  background-size:cover;
+	  background-repeat:no-repeat;
+	  background-attachment:fixed;
+	  background-color:black;
 	  padding-top:0px;
 	  color:white;
 	  }
@@ -63,12 +67,18 @@
 	 left: -40px;
 	 }
 	 
+	 #navbar-textlogo a{
+		 color: white;
+		 text-decoration: none;
+	 }
+	 
 	 #contact-me-navbar {
 		 position:absolute;
 		 text-align: center;
 		 top:70%;
 		 left:25%;
 		 width:50%;
+		 font-weight:bold;
 	 }
 	 
 	 #contact-me-navbar p {
@@ -145,3 +155,12 @@
 	.class {
 		text-align:centre;
 	}
+
+#container-1-3-youtube {
+	height:100%;
+}
+	
+#container-1-3-youtube iframe{
+	border:none;
+	height:100%;
+}
