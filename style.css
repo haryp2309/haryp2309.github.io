@@ -157,10 +157,36 @@
 	}
 
 #container-1-3-youtube {
-	height:100%;
+	height:auto;
 }
 	
 #container-1-3-youtube iframe{
 	border:none;
-	height:100%;
+	height:auto;
+	display:inline;
+}
+
+
+/*Testing*/
+.popup {
+	visibility:hidden;
+}
+
+.show {
+	visibility:visible;
+}
+
+#snapchat-popup {
+	position:absolute;
+	margin:auto;
+	width:50%;
+	height:50%;
+	z-index:1000;
+	background-image:url('images/snapchat-logo.png');
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+
+#show {
+	
 }

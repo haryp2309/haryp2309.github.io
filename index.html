@@ -31,13 +31,17 @@
 	<div id="container-1">
 		<div id="container-1-1-social-media">
 			<div id="fb">
-			<img src="images/facebook-logo.png" alt="Facebook">
+				<a href="https://www.facebook.com/haryp2309">
+					<img src="images/facebook-logo.png" alt="Facebook">
+				</a>
 			</div>
-			<div id="snap">
-			<img src="images/snapchat-logo.png" alt="Snapchat">
+			<div id="snap" onclick="popupClick()">
+					<img src="images/snapchat-logo.png" alt="Snapchat">
 			</div>
 			<div id="insta">
-			<img src="https://instagram.com/static/images/ico/apple-touch-icon-76x76-precomposed.png/4272e394f5ad.png" alt="Instagram">
+				<a href="https://www.instagram.com/harypmusic/">
+					<img src="https://instagram.com/static/images/ico/apple-touch-icon-76x76-precomposed.png/4272e394f5ad.png" alt="Instagram">
+				</a>
 			<!--Instagram's official logo-->
 			</div>
 			<hr>
@@ -47,5 +51,13 @@
 		</div>
 
 	</div>
+	<div class="popup" id="snapchat-popup">
+	</div>
+	<script>
+		function popupClick() {
+		var popup = document.getElementById("snapchat-popup");
+		popup.classList.toggle("show");
+		}
+	</script>
   </body>
 </html>
