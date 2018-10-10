@@ -59,11 +59,16 @@
 			<img src="images/snapchat-logo.png">
 		</div>
 	</div>
-	<script>
+	<script>	
 		function popupClick() {
+		console.log("test");
 		var popup = document.getElementById("snapchat-popup");
-		popup.classList.toggle("show");
+		if (popup.style.display == "flex") {
+			popup.style.display = "none";
+		} else {
+			popup.style.display = "flex";
 		}
+} 
 	</script>
   </body>
 </html>

@@ -189,13 +189,8 @@
 
 
 /*Testing*/
-.popup {
-	visibility:hidden;
-}
 
-.show {
-	visibility:visible;
-}
+
 
 #snapchat-popup {
 	position:fixed;
@@ -209,7 +204,7 @@
 	background-size:cover;
 	left:0;
 	top:0;
-	display:flex;
+	display:none;
 	-webkit-backdrop-filter: blur(5px);
 	backdrop-filter: blur(5px);
 /*testing animation */
