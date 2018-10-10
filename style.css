@@ -9,6 +9,10 @@
 		src: url(fonts/rage-italic.woff) format('woff');
 	  }
 	  
+@keyframes fadein {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
 	body {
 		font-family: "GoogleProductSans", "Arial";
 		background-image:url("images/wallpaper.jpg");
@@ -207,6 +211,9 @@
 	top:0;
 	display:flex;
 	-webkit-backdrop-filter: blur(5px);
+/*testing animation */
+	animation: fadein 1s;
+/*testing animation */
 }
 
 #snapchat-popup-helperdiv {
@@ -215,6 +222,9 @@
 	height: 50vh;
 	width:50vh;
 	overflow:hidden;
+/*testing animation */	
+	animation: fadein 2s;
+/*testing animation */	
 /*	
 	background-color:black;
 	border-radius:5px;
@@ -223,7 +233,10 @@
 
 #snapchat-popup-helperdiv img {
 	max-height:100%;
-	max-width=100%;
+	max-width:100%;
+/*testing animation */
+	animation: fadein 1s;
+/*testing animation */
 }
 
 #show {
