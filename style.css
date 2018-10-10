@@ -211,6 +211,7 @@
 	top:0;
 	display:flex;
 	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
 /*testing animation */
 	animation: fadein 1s;
 /*testing animation */
