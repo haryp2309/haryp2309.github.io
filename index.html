@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HaryP Music</title>
 	<link rel="stylesheet"
 		type="text/css"
 		href="style.css" />
   </head>
   <body>
+  <!-- Navbar -->
 	<div id="navbar">
 		<div id="navbar-logo">
 		<img src="images/Logo.jpg" width="100px">
@@ -28,6 +30,7 @@
 		</h2>
 		</div>
 	</div>
+  <!-- Navbar -->
 	<div id="container-1">
 		<div id="container-1-1-social-media">
 			<div id="fb">
@@ -51,7 +54,10 @@
 		</div>
 
 	</div>
-	<div class="popup" id="snapchat-popup">
+	<div class="popup" id="snapchat-popup" onclick="popupClick()">
+		<div id="snapchat-popup-helperdiv">
+			<img src="images/snapchat-logo.png">
+		</div>
 	</div>
 	<script>
 		function popupClick() {

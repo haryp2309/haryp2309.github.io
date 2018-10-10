@@ -1,46 +1,48 @@
-      @font-face {
-	  font-family: GoogleProductSans;
-	  src: url(fonts/GoogleProductSans.woff2) format('woff2');
+	@font-face {
+		font-family: GoogleProductSans;
+		src: url(fonts/GoogleProductSans.woff2) format('woff2');
+	}
+	  
+	  
+	@font-face {
+		font-family: RageItalic;
+		src: url(fonts/rage-italic.woff) format('woff');
 	  }
 	  
-	  @font-face {
-	  font-family: RageItalic;
-	  src: url(fonts/rage-italic.woff) format('woff');
+	body {
+		font-family: "GoogleProductSans", "Arial";
+		background-image:url("images/wallpaper.jpg");
+		background-size:cover;
+		background-repeat:no-repeat;
+		background-attachment:fixed;
+		background-color:black;
+		padding-top:0px;
+		color:white;
+		margin:0px;
 	  }
 	  
-	  body {
-	  font-family: "GoogleProductSans", "Arial";
-	  background-image:url("images/wallpaper.jpg");
-	  background-size:cover;
-	  background-repeat:no-repeat;
-	  background-attachment:fixed;
-	  background-color:black;
-	  padding-top:0px;
-	  color:white;
+	hr {
+		margin:30px 50px;
+		height:1px;
+		border:none;
+		background-color:rgb(255,255,255);		  
 	  }
 	  
-	  hr {
-		  margin:30px 50px;
-		  height:1px;
-		  border:none;
-		  background-color:rgb(255,255,255);
-		  
-	  }
-	  
-	  #navbar {
-	  background-color: #1f1f1f;
-	  padding-top: 10px;
-	  padding-bottom: 10px;
-	  position: fixed;
-	  z-index: 100;
-	  width: 100%;
-	  float: left;
-	  box-shadow:0 14px 20px 0px rgba(0,0,0,0.38);
-//	  font-weight:90;
-	  height: 100px;
-	  top:0px;
-	  right: 0px;
-	  left: 0px;
+	#navbar {
+		background-color: #1f1f1f;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		position: fixed;
+		z-index: 100;
+		width: 100%;
+		float: left;
+		box-shadow:0 14px 20px 0px rgba(0,0,0,0.38);
+		height: 100px;
+		top:0px;
+		right: 0px;
+		left: 0px;
+		display:flex;
+		overflow:hidden
 	  }
 	  
 	  
@@ -54,18 +56,32 @@
 	 bottom: 0px;
 	 margin-top:10px;
 	 margin-bottom:10px;
+	 display:flex;
+	 width:20%
+	 }
+	 
+	 #navbar-logo img {
+		 max-height:100%;
+		 max-width:100%;
+		 width:auto;
+		 height: auto;
+		 margin:auto 0;
 	 }
 	 
 	 #navbar-textlogo {
 	 position:relative;
 	 margin: auto;
 	 width: 50%;
-	 font-size:70px;
+	 font-size:400%;
 	 font-family: RageItalic;
 	 text-align: center;
 	 top: -80px;
-	 left: -40px;
 	 }
+	 
+	 #navbar-textlogo p {
+		 text-align: center;
+	 }
+	 
 	 
 	 #navbar-textlogo a{
 		 color: white;
@@ -92,25 +108,26 @@
 	 
 	 #navbar-title {
 	 position: absolute;
-	 float: right;
 	 right: 10px;
-//	 width:50%;
+	 width:30vw;
 	 top: 0px;
 	 height: 100px;
 	 text-align: right;
+	 font-size:100%;
+	 margin: auto 10px;
 	 }
 	 
 	 #container-1 {
-		 position:absolute;
-		 top: 100px;
-		 left:10%;
-		 margin-bottom: 10px;
-		 width: 80%;
-		 margin: auto;
-		 padding:20px 40px;
-		 background-color: rgba(25, 25, 25, 0.9);
-		 box-shadow:-20px 0px 20px 5px rgba(0,0,0,0.38), 20px 0px 20px 5px rgba(0,0,0,0.38);
-//		 height: 100%;
+	position:relative;
+	top: 100px;
+//	left:10%;
+	margin-bottom: 10px;
+	width: 80%;
+	margin: 0 auto;
+	padding:20px 40px;
+	background-color: rgba(25, 25, 25, 0.9);
+	box-shadow:-20px 0px 20px 5px rgba(0,0,0,0.38), 20px 0px 20px 5px rgba(0,0,0,0.38);
+//	height: 100%;
 	 }
 
 #container-1-1-social-media {
@@ -177,14 +194,36 @@
 }
 
 #snapchat-popup {
-	position:absolute;
+	position:fixed;
 	margin:auto;
-	width:50%;
-	height:50%;
+	width:100%;
+	height:100%;
 	z-index:1000;
-	background-image:url('images/snapchat-logo.png');
+/*	background-image:url('images/snapchat-logo.png'); */
+	background-color: rgba(0,0,0,0.5);
 	background-repeat:no-repeat;
 	background-size:cover;
+	left:0;
+	top:0;
+	display:flex;
+	-webkit-backdrop-filter: blur(5px);
+}
+
+#snapchat-popup-helperdiv {
+	display: block;
+	margin: auto;
+	height: 50vh;
+	width:50vh;
+	overflow:hidden;
+/*	
+	background-color:black;
+	border-radius:5px;
+	*/
+}
+
+#snapchat-popup-helperdiv img {
+	max-height:100%;
+	max-width=100%;
 }
 
 #show {
