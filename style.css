@@ -35,7 +35,7 @@
 /* Body Fade Out */
 	body.fade-out {
 		opacity:0;
-		transition:none;
+		transition:0.5 opacity;
 	}
 /* Body Fade Out */
 	  
