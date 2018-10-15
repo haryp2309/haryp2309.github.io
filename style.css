@@ -13,6 +13,9 @@
 	from { opacity: 0; }
 	to   { opacity: 1; }
 }
+
+
+
 	body {
 		font-family: "GoogleProductSans", "Arial";
 		background-image:url("images/wallpaper.jpg");
@@ -23,7 +26,18 @@
 		padding-top:0px;
 		color:white;
 		margin:0px;
+/* Body Fade Out */
+			opacity:1;
+			transition:0.5s opacity;
+/* Body Fade Out */
 	  }
+	  
+/* Body Fade Out */
+	body.fade-out {
+		opacity:0;
+		transition:none;
+	}
+/* Body Fade Out */
 	  
 	hr {
 		margin:30px 50px;
