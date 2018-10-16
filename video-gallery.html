@@ -5,6 +5,16 @@
 		<link rel="stylesheet"
 		type="text/css"
 		href="style.css" />
+		<style>
+			iframe body {
+			color:white !important;
+			}
+			
+			iframe div.ytce-gallery li div a {color:red !important;	
+				}
+				
+			div.ytce-gallery li div a[style] {color:#FFFFFF !important;}
+		</style>
 	</head>
 	<body>
   <!-- Navbar -->
@@ -34,9 +44,18 @@
 	<div id="container-1">	
 		<div id="container-1-3-youtube">
 		<h1>YouTube</h1>
-			<iframe src="https://ytchannelembed.com/ytce-gallery.php?user=UCSf0i7xsyWWEtfbAW53qVKQ&rows=3&ratio=hd&width=130&margin=15&desc="100&desc_color=9E9E9E&title=30&title_color=000000&https=0&duration=1&views=1&likes=1&dislikes=1&fav=1&cols=3" style="width:100%;max-width:100%;" class="ytce"></iframe>
-		</div>
+<!-- iframe -->		
+			<iframe src="https://ytchannelembed.com/ytce-gallery.php?user=UCSf0i7xsyWWEtfbAW53qVKQ&rows=3&ratio=hd&width=130&margin=15&desc="100&desc_color=DEDEDE&title=30&title_color=FFFFFF&https=0&duration=1&views=1&likes=1&dislikes=1&fav=1&cols=3" style="width:100%;max-width:420px;" class="ytce"></iframe>
+<!--<iframe src="ytce-gallery.htm"></iframe>-->
+
+<!-- iframe -->
 	</div>
 	<script src="script.js"></script>
+	<script>
+		var iframe = document.getElementsByTagName("iframe")[0];
+		iframe.style.height=h;
+		iframe.style.width='100%';
+		iframe.style.maxWidth='100%';
+	</script>
 	</body>
 </html>
