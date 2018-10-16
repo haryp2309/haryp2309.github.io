@@ -23,3 +23,5 @@ function fadeOutAnimation() {
 	var bodyEl = document.getElementsByTagName("body")[0];
 		bodyEl.classList.add("fade-out-animation");
 }
+
+

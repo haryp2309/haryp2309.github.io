@@ -55,7 +55,7 @@
 		</div>
 
 	</div>
-	<div class="popup" id="snapchat-popup" onclick="popupClick()">
+	<div class="popup" id="snapchat-popup" onclick="popupFadeOut();myVar = setTimeout(popupClick,500);myVar = setTimeout(popupFadeOutRemove,500);">
 		<div id="snapchat-popup-helperdiv">
 			<img src="images/snapcode.png">
 		</div>
@@ -71,6 +71,14 @@
 		}
 } 
 
+		function popupFadeOut() {
+		document.getElementById("snapchat-popup").classList.add("fade-out-animation")
+		}
+		
+		function popupFadeOutRemove() {
+		document.getElementById("snapchat-popup").classList.remove("fade-out-animation")
+		}
+		
 	</script>
 	<script src="script.js"></script>
   </body>

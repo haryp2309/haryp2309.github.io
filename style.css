@@ -41,7 +41,12 @@
 
 	body.fade-out-animation {
 		opacity:0;
-		transition:0.5;
+		transition:0.5s opacity;
+	}
+
+	div.fade-out-animation {
+		opacity:0;
+		transition:0.5s opacity;
 	}
 	  
 	hr {
