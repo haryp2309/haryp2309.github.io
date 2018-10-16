@@ -35,7 +35,7 @@
 /* Body Fade Out */
 	body.fade-out {
 		opacity:0;
-		transition:0.5 opacity;
+		transition:none;
 	}
 /* Body Fade Out */
 	  
@@ -249,6 +249,3 @@
 /*testing animation */
 }
 
-#show {
-	
-}
