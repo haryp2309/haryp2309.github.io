@@ -38,6 +38,11 @@
 		transition:none;
 	}
 /* Body Fade Out */
+
+	body.fade-out-animation {
+		opacity:0;
+		transition:0.5;
+	}
 	  
 	hr {
 		margin:30px 50px;
