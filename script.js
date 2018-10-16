@@ -15,6 +15,10 @@ function openVideoGallery() {
 	window.open("video-gallery.html", "_self")
 }
 
+function openIndex() {
+	window.open("index.html", "_self")
+}
+
 function fadeOutAnimation() {
 	var bodyEl = document.getElementsByTagName("body")[0];
 		bodyEl.classList.add("fade-out-animation");
