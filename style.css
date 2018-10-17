@@ -1,7 +1,7 @@
-	@font-face {
-		font-family: GoogleProductSans;
-		src: url(fonts/GoogleProductSans.woff2) format('woff2');
-	}
+@font-face {
+	font-family: GoogleProductSans;
+	src: url(fonts/GoogleProductSans.woff2) format('woff2');
+}
 	  
 	  
 	@font-face {
@@ -14,7 +14,14 @@
 	to   { opacity: 1; }
 }
 
+h1 {
+	margin-left: 40px;
+	margin-right: 40px;
+}
 
+td {
+	text-align:center;
+}
 
 	body {
 		font-family: "GoogleProductSans", "Arial";
@@ -26,6 +33,7 @@
 		padding-top:0px;
 		color:white;
 		margin:0px;
+		line-height:2;
 /* Body Fade Out */
 			opacity:1;
 			transition:0.5s opacity;
@@ -70,7 +78,8 @@
 		right: 0px;
 		left: 0px;
 		display:flex;
-		overflow:hidden
+		overflow:hidden;
+		line-height:1.2;
 	  }
 	  
 	  
@@ -103,7 +112,7 @@
 	 font-size:400%;
 	 font-family: RageItalic;
 	 text-align: center;
-	 top: -80px;
+	 top: -70px;
 	 }
 	 
 	 #navbar-textlogo p {
