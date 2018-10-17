@@ -17,6 +17,7 @@
 h1 {
 	margin-left: 40px;
 	margin-right: 40px;
+	letter-spacing:2px;
 }
 
 td {
@@ -34,6 +35,7 @@ td {
 		color:white;
 		margin:0px;
 		line-height:2;
+		letter-spacing:1px;
 /* Body Fade Out */
 			opacity:1;
 			transition:0.5s opacity;
