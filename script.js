@@ -24,4 +24,4 @@ function fadeOutAnimation() {
 		bodyEl.classList.add("fade-out-animation");
 }
 
-var h = (window.innerHeight - 120) +"px";
+var h = (window.innerHeight - 300) +"px";
