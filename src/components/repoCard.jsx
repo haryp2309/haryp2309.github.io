@@ -19,10 +19,15 @@ class RepoCard extends Component {
     const { repo } = this.props;
     return (
       <Card color="secondary" style={cardStyle}>
-        <CardActionArea onClick={() => window.open(repo.html_url)}>
-          <CardContent>
+        <CardActionArea
+          onClick={() => window.open(repo.html_url)}
+          style={{ height: "100%" }}
+        >
+          <CardContent
+            style={{ display: "flex", flexDirection: "column", height: "100%" }}
+          >
             <Typography variant="h5">{repo.name}</Typography>
-            <Typography>{repo.description}</Typography>
+            <Typography style={{ flexGrow: 1 }}>{repo.description}</Typography>
             <div style={{ display: "flex" }}>
               <div style={{ flexGrow: 1 }}></div>
               <GitHub style={{ margin: "5px", color: "#fff" }}></GitHub>

@@ -4,21 +4,18 @@ import "./App.css";
 import Navbar from "./components/navbar";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { darkTheme } from "./components/colorPalette";
-import { CssBaseline } from "@material-ui/core";
+import { Container, CssBaseline } from "@material-ui/core";
 import RepoCardContainer from "./components/repoCardContainer";
-
-const mainContainerStyle = {
-  margin: "10px",
-};
+import React from "react";
 
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <Navbar />
-      <div style={mainContainerStyle}>
+      <Container maxWidth="lg">
         <RepoCardContainer />
-      </div>
+      </Container>
     </ThemeProvider>
   );
 }
