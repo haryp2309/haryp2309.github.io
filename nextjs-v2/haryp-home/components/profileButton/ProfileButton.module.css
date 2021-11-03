@@ -1,0 +1,16 @@
+.circle {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border-color: var(--color-tint);
+  border-style: solid;
+  border-width: 2px;
+  background-color: var(--color-tint);
+  background-image: url("/api/pb");
+  background-size: cover;
+  box-shadow: var(--shadow-1);
+}
+
+.circle:hover {
+  cursor: pointer;
+}
