@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import { motion } from "framer-motion";
 import { RepoData } from "../typings/repoData";
@@ -85,12 +85,17 @@ const Home: NextPage<HomeProps> = (props) => {
   );
 };
 
-Home.getInitialProps = async () => {
+export const getStaticProps: GetStaticProps = async (ctx) => {
   const repos: RepoData[] = await fetchRepoData();
+
   const weeklyActivities: WeeklyActivity[] = (
     await fetchWeeklyActivity(new Date().getFullYear())
   ).weeklyActivities;
-  return { repos, weeklyActivities };
+
+  return {
+    props: { repos, weeklyActivities },
+    revalidate: 10,
+  };
 };
 
 export default Home;
