@@ -11,12 +11,14 @@ export const Card: React.FC<CardProps> = (props: CardProps) => {
   const { repoData } = props;
   const { description, highlighted, id, name, url } = repoData;
   return (
-    <div
+    <a
       className={`${styles.box} clickable ${
         highlighted ? styles.highlighted : ""
       }`}
       key={id}
-      onClick={() => window.open(url)}
+      href={url}
+      target="_blank"
+      rel="noreferrer"
     >
       <div className={styles["name"]}>{name}</div>
       <div>{description}</div>
@@ -29,6 +31,6 @@ export const Card: React.FC<CardProps> = (props: CardProps) => {
           width="30px"
         />
       </div>
-    </div>
+    </a>
   );
 };
