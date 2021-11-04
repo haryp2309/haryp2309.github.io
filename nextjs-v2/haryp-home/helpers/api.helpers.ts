@@ -11,7 +11,9 @@ export const generateOptions = (type: "GET") => {
 };
 
 export const getData = async <T>(url: string): Promise<T> => {
-  return (await fetch(url, generateOptions("GET")).then((response) =>
-    response.json()
-  )) as T;
+  return (await fetch(url, generateOptions("GET"))
+    .then((response) => response.json())
+    .catch((reason) => {
+      console.error(reason);
+    })) as T;
 };

@@ -12,12 +12,13 @@ import { Chip } from "../components/chip";
 import { WeeklyActivity } from "typings/weeklyActivity";
 import { fetchWeeklyActivity } from "./api/userActivity";
 import dynamic, { LoaderComponent } from "next/dynamic";
+import { CommitChartProps } from "components/commitChart";
 
 const CommitChart = dynamic(
   (() =>
     import("components/commitChart").then(
       (mod) => mod.CommitChart
-    )) as unknown as LoaderComponent /* TODO: FIND BETTER FIX */,
+    )) as unknown as LoaderComponent<CommitChartProps> /* TODO: FIND BETTER FIX */,
   {
     ssr: false,
   }

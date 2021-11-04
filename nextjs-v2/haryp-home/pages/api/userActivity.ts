@@ -20,7 +20,7 @@ export const fetchWeeklyActivity = async (
     contributions: { week: number; days: { count: number }[] }[];
   };
   const fetchUrl = `https://skyline.github.com/${USER_ID}/${year}.json`;
-  const { contributions } = await getData<Data>(fetchUrl);
+  const { contributions = [] } = await getData<Data>(fetchUrl);
   const weeklyActivities = contributions.map(({ week, days }) => ({
     week,
     activity: days.map(({ count }) => count).reduce((a, b) => a + b, 0),
