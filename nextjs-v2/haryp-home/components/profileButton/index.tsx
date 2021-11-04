@@ -1,7 +1,7 @@
 import styles from "./ProfileButton.module.css";
 import { NextComponentType } from "next";
 import { motion } from "framer-motion";
-import { USER_LINK } from "../constants/user";
+import { USER_LINK } from "../../constants/user";
 
 export type ProfileButtonProps = {
   children?: React.ReactNode;

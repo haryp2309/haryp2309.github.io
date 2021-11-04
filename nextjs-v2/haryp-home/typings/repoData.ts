@@ -3,4 +3,6 @@ export type RepoData = {
   name: string;
   url: string;
   description: string;
+  highlighted: boolean;
+  topics: string[];
 };

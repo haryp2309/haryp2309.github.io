@@ -1,0 +1,9 @@
+.chip {
+  padding: 10px 15px;
+  background-color: var(--color-p-normal);
+  border-radius: 20px/50%;
+}
+
+.chip.active {
+  background-color: var(--color-tint);
+}

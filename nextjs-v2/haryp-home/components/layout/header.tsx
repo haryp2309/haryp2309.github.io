@@ -20,7 +20,7 @@ export const Header: NextComponentType = (props: HeaderProps) => {
       transition={{ duration: 0.2 }}
       className={styles.header}
     >
-      <div className={styles["page-title"]}>{"Hary Pirajan's Projects"}</div>
+      <h1 className={styles["page-title"]}>{"Hary Pirajan's Projects"}</h1>
       <div className={styles["space"]} />
       <ProfileButton />
     </motion.div>

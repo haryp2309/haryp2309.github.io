@@ -1,42 +1,23 @@
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .centered-container {
   width: 100%;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  max-width: 1000px;
+  max-width: 1400px;
   padding: 0 20px;
 }
 
-.box {
-  background-color: var(--color-tint);
-  color: white;
-  border-radius: var(--radius);
-  padding: 20px;
-  box-shadow: var(--shadow-1);
+.card-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
 
+.chips-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 20px 0;
   gap: 10px;
-}
-
-.name {
-  font-size: 1.5em;
-}
-
-.repo-provider-logo-container {
-  width: 100%;
-  flex-grow: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-
-.repo-provider-logo {
-  opacity: 30%;
 }

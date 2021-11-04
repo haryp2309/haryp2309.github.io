@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { API_BASE_URL } from "../../components/constants/user";
+import { API_BASE_URL } from "../../constants/user";
 
 export default async function handler(
   req: NextApiRequest,

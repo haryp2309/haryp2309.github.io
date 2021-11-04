@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { API_BASE_URL } from "../../components/constants/user";
+import { API_BASE_URL } from "../../constants/user";
 import { RepoData } from "../../typings/repoData";
 
 export const fetchRepoData = async () => {
@@ -18,16 +18,20 @@ export const fetchRepoData = async () => {
       description,
       html_url,
       id,
+      topics,
     }: {
       name: string;
       description: string;
       html_url: string;
       id: string;
+      topics: string[];
     }) => ({
       description,
       name,
       url: html_url,
       id,
+      highlighted: topics.includes("highlight"),
+      topics: topics.filter((topic) => topic !== "highlight"),
     })
   );
   return repoDatas;
