@@ -23,6 +23,9 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.trans-all {
   transition: all 250ms ease-in-out;
 }
 

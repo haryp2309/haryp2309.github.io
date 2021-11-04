@@ -4,25 +4,12 @@ import { motion } from "framer-motion";
 import { RepoData } from "../typings/repoData";
 import { useEffect, useState } from "react";
 import { fetchRepoData } from "./api/repos";
-import githubSvg from "../icons/github.svg";
-import Image from "next/image";
 import { Card } from "../components/card";
 import { Chip } from "../components/chip";
 
 import { WeeklyActivity } from "typings/weeklyActivity";
 import { fetchWeeklyActivity } from "./api/userActivity";
-import dynamic, { LoaderComponent } from "next/dynamic";
-import { CommitChartProps } from "components/commitChart";
-
-const CommitChart = dynamic(
-  (() =>
-    import("components/commitChart").then(
-      (mod) => mod.CommitChart
-    )) as unknown as LoaderComponent<CommitChartProps> /* TODO: FIND BETTER FIX */,
-  {
-    ssr: false,
-  }
-);
+import { CommitChart } from "components/commitChart";
 
 type HomeProps = {
   repos: RepoData[];
@@ -50,23 +37,22 @@ const Home: NextPage<HomeProps> = (props) => {
     );
   };
 
+  const visibleRepos = repos.filter(
+    ({ topics }) =>
+      selectedTopics.length === 0 ||
+      topics
+        .map((topic) => selectedTopics.includes(topic))
+        .reduce((a, b) => a || b, false)
+  );
+
   return (
     <motion.div className={styles.container}>
       <div className={styles["centered-container"]}>
-        <h1>Commits this year</h1>
+        <h1>Commits {new Date().getFullYear()}</h1>
         <div className={styles.container}>
           <CommitChart weeklyActivities={weeklyActivities} />
         </div>
         <h1>Repos</h1>
-        <h2>Highlighted</h2>
-        <div className={styles["card-grid"]}>
-          {repos
-            .filter(({ highlighted }) => highlighted)
-            .map((repoData) => (
-              <Card key={repoData.id} repoData={repoData} />
-            ))}
-        </div>
-        <h2>Other</h2>
         <div className={styles["chips-container"]}>
           {topics.map((label) => (
             <Chip
@@ -77,16 +63,19 @@ const Home: NextPage<HomeProps> = (props) => {
             />
           ))}
         </div>
+        <h2>Highlighted</h2>
         <div className={styles["card-grid"]}>
-          {repos
+          {visibleRepos
+            .filter(({ highlighted }) => highlighted)
+            .map((repoData) => (
+              <Card key={repoData.id} repoData={repoData} />
+            ))}
+        </div>
+        <h2>Other</h2>
+
+        <div className={styles["card-grid"]}>
+          {visibleRepos
             .filter(({ highlighted }) => !highlighted)
-            .filter(
-              ({ topics }) =>
-                selectedTopics.length === 0 ||
-                topics
-                  .map((topic) => selectedTopics.includes(topic))
-                  .reduce((a, b) => a || b, false)
-            )
             .map((repoData) => (
               <Card key={repoData.id} repoData={repoData} />
             ))}
@@ -98,8 +87,9 @@ const Home: NextPage<HomeProps> = (props) => {
 
 Home.getInitialProps = async () => {
   const repos: RepoData[] = await fetchRepoData();
-  const weeklyActivities: WeeklyActivity[] = (await fetchWeeklyActivity(2021))
-    .weeklyActivities;
+  const weeklyActivities: WeeklyActivity[] = (
+    await fetchWeeklyActivity(new Date().getFullYear())
+  ).weeklyActivities;
   return { repos, weeklyActivities };
 };
 
