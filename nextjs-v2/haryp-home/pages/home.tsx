@@ -8,13 +8,24 @@ import githubSvg from "../icons/github.svg";
 import Image from "next/image";
 import { Card } from "../components/card";
 import { Chip } from "../components/chip";
+import {
+  Area,
+  AreaChart,
+  CartesianGrid,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
+import { WeeklyActivity } from "typings/weeklyActivity";
+import { fetchWeeklyActivity } from "./api/userActivity";
 
 type HomeProps = {
   repos: RepoData[];
+  weeklyActivities: WeeklyActivity[];
 };
 
 const Home: NextPage<HomeProps> = (props) => {
-  const { repos } = props;
+  const { repos, weeklyActivities } = props;
   const [topics, setTopics] = useState<string[]>([]);
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
 
@@ -37,7 +48,47 @@ const Home: NextPage<HomeProps> = (props) => {
   return (
     <motion.div className={styles.container}>
       <div className={styles["centered-container"]}>
-        <h1>Highlighted</h1>
+        <h1>Commits this year</h1>
+        <div className={styles.container}>
+          <AreaChart
+            width={730}
+            height={250}
+            data={weeklyActivities.map(({ week, activity }) => ({
+              name: `Week ${week}`,
+              week,
+              commits: activity,
+            }))}
+            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+          >
+            <defs>
+              <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                <stop
+                  offset="5%"
+                  stopColor="var(--color-tint)"
+                  stopOpacity={0.8}
+                />
+                <stop
+                  offset="95%"
+                  stopColor="var(--color-tint)"
+                  stopOpacity={0}
+                />
+              </linearGradient>
+            </defs>
+            <XAxis dataKey="name" />
+            <YAxis />
+            <CartesianGrid strokeDasharray="3 3" />
+            <Tooltip />
+            <Area
+              type="monotone"
+              dataKey="commits"
+              stroke="var(--color-tint)"
+              fillOpacity={1}
+              fill="url(#colorUv)"
+            />
+          </AreaChart>
+        </div>
+        <h1>Repos</h1>
+        <h2>Highlighted</h2>
         <div className={styles["card-grid"]}>
           {repos
             .filter(({ highlighted }) => highlighted)
@@ -45,7 +96,7 @@ const Home: NextPage<HomeProps> = (props) => {
               <Card key={repoData.id} repoData={repoData} />
             ))}
         </div>
-        <h1>Other</h1>
+        <h2>Other</h2>
         <div className={styles["chips-container"]}>
           {topics.map((label) => (
             <Chip
@@ -77,7 +128,9 @@ const Home: NextPage<HomeProps> = (props) => {
 
 Home.getInitialProps = async () => {
   const repos: RepoData[] = await fetchRepoData();
-  return { repos };
+  const weeklyActivities: WeeklyActivity[] = (await fetchWeeklyActivity(2021))
+    .weeklyActivities;
+  return { repos, weeklyActivities };
 };
 
 export default Home;

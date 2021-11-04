@@ -2,15 +2,12 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { API_BASE_URL } from "../../constants/user";
 import { RepoData } from "../../typings/repoData";
 
-export const fetchRepoData = async () => {
-  const requestOptions = {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
+import { FILEPATH as PARENT_FILEPATH } from ".";
+import { generateOptions } from "helpers/api.helpers";
+export const FILEPATH = PARENT_FILEPATH + "/repos";
 
-  const response = await fetch(`${API_BASE_URL}/repos`, requestOptions);
+export const fetchRepoData = async () => {
+  const response = await fetch(`${API_BASE_URL}/repos`, generateOptions("GET"));
   const data = (await response.json()) as any[];
   const repoDatas: RepoData[] = data.map(
     ({
