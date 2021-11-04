@@ -7,6 +7,7 @@ body {
   --color-tint: rgb(239, 83, 80);
   --shadow-1: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   --radius: 5px;
+  --container-max-width: 1400px;
 
   padding: 0;
   margin: 0;

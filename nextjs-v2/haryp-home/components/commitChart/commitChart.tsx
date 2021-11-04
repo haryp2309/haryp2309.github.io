@@ -21,7 +21,7 @@ export const CommitChart: React.FC<CommitChartProps> = (
   const { className, weeklyActivities } = props;
 
   return (
-    <ResponsiveContainer width="95%" height={300}>
+    <ResponsiveContainer width="100%" height={300}>
       <AreaChart
         className={`${styles.chart} ${className}`}
         width={730}
@@ -31,7 +31,7 @@ export const CommitChart: React.FC<CommitChartProps> = (
           week,
           commits: activity,
         }))}
-        margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+        margin={{ top: 10, right: 30, left: -20, bottom: 0 }}
       >
         <defs>
           <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
@@ -41,8 +41,14 @@ export const CommitChart: React.FC<CommitChartProps> = (
         </defs>
         <XAxis dataKey="name" />
         <YAxis />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip />
+        {/* <CartesianGrid strokeDasharray="3 3" /> */}
+        <Tooltip
+          contentStyle={{
+            background: "var(--color-p-dark)",
+            borderColor: "var(--color-tint)",
+            borderRadius: "var(--radius)",
+          }}
+        />
         <Area
           type="monotone"
           dataKey="commits"

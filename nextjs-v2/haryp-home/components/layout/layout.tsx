@@ -13,7 +13,11 @@ export const Layout: NextComponentType = (props: LayoutProps) => {
     <>
       <Header />
       <main>{children}</main>
-      <div className={styles["footer"]}></div>
+      <footer className={styles.footer}>
+        <div className={styles["footer-content"]}>
+          Developed with Next.js by haryp2309
+        </div>
+      </footer>
     </>
   );
 };

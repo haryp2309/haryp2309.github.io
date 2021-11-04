@@ -19,8 +19,6 @@ export const fetchRepoData = async () => {
 
   if (!Array.isArray(data)) data = [];
 
-  console.log("😅", data);
-
   const repoDatas: RepoData[] = data.map(
     ({ name, description, html_url, id, topics }) => ({
       description,

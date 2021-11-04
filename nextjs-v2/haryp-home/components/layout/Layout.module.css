@@ -1,4 +1,18 @@
 .footer {
   width: 100%;
-  height: 40px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.footer-content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 20px;
+  opacity: 0.25;
+  font-size: 1.1em;
+  max-width: var(--container-max-width);
+  flex-grow: 1;
 }

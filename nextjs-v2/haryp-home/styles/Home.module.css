@@ -5,7 +5,7 @@
 
 .centered-container {
   width: 100%;
-  max-width: 1400px;
+  max-width: var(--container-max-width);
   padding: 0 20px;
 }
 

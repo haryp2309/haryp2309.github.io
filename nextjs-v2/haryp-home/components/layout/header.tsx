@@ -14,7 +14,7 @@ export const Header: NextComponentType = (props: HeaderProps) => {
   const showHeader = scrollingDirection == "up";
 
   return (
-    <motion.div
+    <motion.header
       initial={false}
       animate={{ y: showHeader ? 0 : "-100%" }}
       transition={{ duration: 0.2 }}
@@ -23,6 +23,6 @@ export const Header: NextComponentType = (props: HeaderProps) => {
       <h1 className={styles["page-title"]}>{"Hary Pirajan's Projects"}</h1>
       <div className={styles["space"]} />
       <ProfileButton />
-    </motion.div>
+    </motion.header>
   );
 };

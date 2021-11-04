@@ -9,13 +9,15 @@ export type ProfileButtonProps = {
 
 export const ProfileButton: NextComponentType = (props: ProfileButtonProps) => {
   return (
-    <motion.div
+    <motion.a
       animate={{
-        rotate: [-90, 0],
+        rotate: [-360, 0],
       }}
       transition={{ duration: 0.5 }}
       className={`${styles.circle} clickable`}
-      onClick={() => window.open(USER_LINK)}
+      href={USER_LINK}
+      target="_blank"
+      rel="noreferrer"
     />
   );
 };
