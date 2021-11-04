@@ -12,7 +12,7 @@ export const Layout: NextComponentType = (props: LayoutProps) => {
   return (
     <>
       <Header />
-      {children}
+      <main>{children}</main>
       <div className={styles["footer"]}></div>
     </>
   );

@@ -3,26 +3,26 @@ import { API_BASE_URL } from "../../constants/user";
 import { RepoData } from "../../typings/repoData";
 
 import { FILEPATH as PARENT_FILEPATH } from ".";
-import { generateOptions } from "helpers/api.helpers";
+import { generateOptions, getData } from "helpers/api.helpers";
 export const FILEPATH = PARENT_FILEPATH + "/repos";
 
 export const fetchRepoData = async () => {
-  const response = await fetch(`${API_BASE_URL}/repos`, generateOptions("GET"));
-  const data = (await response.json()) as any[];
+  const url = `${API_BASE_URL}/repos`;
+  type ResponseType = {
+    name: string;
+    description: string;
+    html_url: string;
+    id: string;
+    topics: string[];
+  }[];
+  let data = await getData<ResponseType>(url);
+
+  if (!Array.isArray(data)) data = [];
+
+  console.log("😅", data);
+
   const repoDatas: RepoData[] = data.map(
-    ({
-      name,
-      description,
-      html_url,
-      id,
-      topics,
-    }: {
-      name: string;
-      description: string;
-      html_url: string;
-      id: string;
-      topics: string[];
-    }) => ({
+    ({ name, description, html_url, id, topics }) => ({
       description,
       name,
       url: html_url,
