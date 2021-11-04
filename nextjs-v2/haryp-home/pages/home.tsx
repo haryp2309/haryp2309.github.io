@@ -51,6 +51,7 @@ const Home: NextPage<HomeProps> = (props) => {
         <h1>Commits this year</h1>
         <div className={styles.container}>
           <AreaChart
+            className={styles.chart}
             width={730}
             height={250}
             data={weeklyActivities.map(({ week, activity }) => ({
