@@ -9,6 +9,7 @@ import { Chip } from "../components/chip";
 import { WeeklyActivity } from "typings/weeklyActivity";
 import { fetchWeeklyActivity } from "./api/userActivity";
 import { CommitChart } from "components/commitChart";
+import Header from "next/head";
 
 type HomeProps = {
   repos: RepoData[];
@@ -65,29 +66,34 @@ const Home: NextPage<HomeProps> = (props) => {
   );
 
   return (
-    <motion.div className={styles.container}>
-      <div className={styles["centered-container"]}>
-        <h1>Commits {new Date().getFullYear()}</h1>
-        <div className={styles.container}>
-          <CommitChart weeklyActivities={weeklyActivities} />
+    <>
+      <Header>
+        <title>{"Hary Pirajan's projects"}</title>
+      </Header>
+      <motion.div className={styles.container}>
+        <div className={styles["centered-container"]}>
+          <h1>Commits {new Date().getFullYear()}</h1>
+          <div className={styles.container}>
+            <CommitChart weeklyActivities={weeklyActivities} />
+          </div>
+          <h1>Repos</h1>
+          <div className={styles["chips-container"]}>
+            {topics.map((label) => (
+              <Chip
+                key={label}
+                label={label}
+                onClick={toggleTopic(label)}
+                active={selectedTopics.includes(label)}
+              />
+            ))}
+          </div>
+          <h2>Highlighted</h2>
+          <div className={styles["card-grid"]}>{generateRepoCards(true)}</div>
+          <h2>Other</h2>
+          <div className={styles["card-grid"]}>{generateRepoCards(false)}</div>
         </div>
-        <h1>Repos</h1>
-        <div className={styles["chips-container"]}>
-          {topics.map((label) => (
-            <Chip
-              key={label}
-              label={label}
-              onClick={toggleTopic(label)}
-              active={selectedTopics.includes(label)}
-            />
-          ))}
-        </div>
-        <h2>Highlighted</h2>
-        <div className={styles["card-grid"]}>{generateRepoCards(true)}</div>
-        <h2>Other</h2>
-        <div className={styles["card-grid"]}>{generateRepoCards(false)}</div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </>
   );
 };
 

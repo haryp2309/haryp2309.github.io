@@ -14,6 +14,5 @@ export default async function handler(
   const { avatar_url } = data;
 
   if (avatar_url) res.redirect(307, avatar_url);
-  else res.status(500);
-  console.log("💁", { res });
+  else throw Error("Something went wrong");
 }
