@@ -9,8 +9,8 @@
   align-items: center;
   padding: 0 20px;
   box-sizing: border-box;
-  margin-bottom: 40px;
   z-index: 1000;
+  font-family: "Source Code Pro", monospace;
 }
 
 .transparent {
@@ -24,4 +24,10 @@
 
 .space {
   flex-grow: 1;
+}
+
+.dark-mode-icon {
+  width: 40px;
+  height: 40px;
+  fill: var(--color-tint);
 }

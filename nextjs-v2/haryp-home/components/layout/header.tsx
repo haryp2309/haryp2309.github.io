@@ -14,6 +14,7 @@ export const Header: NextComponentType = (props: HeaderProps) => {
   const { scrollingDirection, scrollLevel } = useScrollDirection(50);
   const [darkMode, setDarkMode] = useState(false);
   const [overrideSystemTheme, setOverrideSystemTheme] = useState(false);
+  const [title, setTitle] = useState("");
 
   const showHeader = scrollingDirection == "up";
 
@@ -27,6 +28,16 @@ export const Header: NextComponentType = (props: HeaderProps) => {
       .getElementsByTagName("body")[0]
       .classList.add(darkMode ? "dark" : "light");
   }, [darkMode]);
+
+  useEffect(() => {
+    const titleString = "@haryp2309";
+
+    for (let i = 0; i <= titleString.length; i++) {
+      setTimeout(() => {
+        setTitle(titleString.substring(0, i));
+      }, i * 100 + 200);
+    }
+  }, []);
 
   useEffect(() => {
     const listenerName = "change";
@@ -52,7 +63,7 @@ export const Header: NextComponentType = (props: HeaderProps) => {
       transition={{ duration: 0.2 }}
       className={`${styles.header} ${transparentClassName} trans-all`}
     >
-      <h1 className={styles["page-title"]}>{"Hary Pirajan's Projects"}</h1>
+      <h1 className={styles["page-title"]}>{title}</h1>
       <div className={styles["space"]} />
       <Toggle onToggle={handleToggle} checked={darkMode} />
       <ProfileButton />
