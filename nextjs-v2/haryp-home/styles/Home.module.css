@@ -21,3 +21,11 @@
   margin: 20px 0;
   gap: 10px;
 }
+
+.card-wrapper {
+  display: flex;
+}
+
+.card-wrapper a {
+  width: 100%;
+}

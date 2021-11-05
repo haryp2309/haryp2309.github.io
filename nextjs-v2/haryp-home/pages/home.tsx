@@ -1,12 +1,11 @@
 import type { GetStaticProps, NextPage } from "next";
 import styles from "../styles/Home.module.css";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { RepoData } from "../typings/repoData";
 import { useEffect, useState } from "react";
 import { fetchRepoData } from "./api/repos";
 import { Card } from "../components/card";
 import { Chip } from "../components/chip";
-
 import { WeeklyActivity } from "typings/weeklyActivity";
 import { fetchWeeklyActivity } from "./api/userActivity";
 import { CommitChart } from "components/commitChart";
@@ -45,6 +44,26 @@ const Home: NextPage<HomeProps> = (props) => {
         .reduce((a, b) => a || b, false)
   );
 
+  const generateRepoCards = (onlyHighlighted: boolean) => (
+    <AnimatePresence>
+      {visibleRepos
+        .filter(({ highlighted }) =>
+          onlyHighlighted ? highlighted : !highlighted
+        )
+        .map((repoData) => (
+          <motion.div
+            key={repoData.id}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className={`${styles["card-wrapper"]}`}
+          >
+            <Card repoData={repoData} />
+          </motion.div>
+        ))}
+    </AnimatePresence>
+  );
+
   return (
     <motion.div className={styles.container}>
       <div className={styles["centered-container"]}>
@@ -64,22 +83,9 @@ const Home: NextPage<HomeProps> = (props) => {
           ))}
         </div>
         <h2>Highlighted</h2>
-        <div className={styles["card-grid"]}>
-          {visibleRepos
-            .filter(({ highlighted }) => highlighted)
-            .map((repoData) => (
-              <Card key={repoData.id} repoData={repoData} />
-            ))}
-        </div>
+        <div className={styles["card-grid"]}>{generateRepoCards(true)}</div>
         <h2>Other</h2>
-
-        <div className={styles["card-grid"]}>
-          {visibleRepos
-            .filter(({ highlighted }) => !highlighted)
-            .map((repoData) => (
-              <Card key={repoData.id} repoData={repoData} />
-            ))}
-        </div>
+        <div className={styles["card-grid"]}>{generateRepoCards(false)}</div>
       </div>
     </motion.div>
   );

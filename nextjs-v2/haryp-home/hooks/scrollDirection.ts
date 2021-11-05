@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-
-export const useScrollDirection = (threshold = 0): "up" | "down" => {
-  const [scrollingDirection, setScrollingDirection] = useState<"up" | "down">(
-    "up"
-  );
+type ReturnValue = {
+  scrollingDirection: "up" | "down";
+};
+export const useScrollDirection = (threshold = 0) => {
+  const [scrollingDirection, setScrollingDirection] =
+    useState<ReturnValue["scrollingDirection"]>("up");
+  const [scrollLevel, setScrollLevel] = useState(0);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -16,12 +18,12 @@ export const useScrollDirection = (threshold = 0): "up" | "down" => {
       }
       setScrollingDirection(scrollY > lastScrollY ? "down" : "up");
       lastScrollY = scrollY > 0 ? scrollY : 0;
+      setScrollLevel(lastScrollY);
     };
 
     window.addEventListener("scroll", onScroll);
-
     return () => window.removeEventListener("scroll", onScroll);
-  }, [scrollingDirection, threshold]);
+  }, [threshold]);
 
-  return scrollingDirection;
+  return { scrollingDirection, scrollLevel };
 };

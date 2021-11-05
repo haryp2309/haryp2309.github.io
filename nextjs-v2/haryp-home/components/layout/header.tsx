@@ -10,15 +10,17 @@ export type HeaderProps = {
 };
 
 export const Header: NextComponentType = (props: HeaderProps) => {
-  const scrollingDirection = useScrollDirection(50);
+  const { scrollingDirection, scrollLevel } = useScrollDirection(50);
   const showHeader = scrollingDirection == "up";
+
+  const transparentClassName = scrollLevel < 50 ? styles.transparent : "";
 
   return (
     <motion.header
       initial={false}
-      animate={{ y: showHeader ? 0 : "-100%" }}
+      animate={{ y: true ? 0 : "-100%" }}
       transition={{ duration: 0.2 }}
-      className={styles.header}
+      className={`${styles.header} ${transparentClassName} trans-all`}
     >
       <h1 className={styles["page-title"]}>{"Hary Pirajan's Projects"}</h1>
       <div className={styles["space"]} />

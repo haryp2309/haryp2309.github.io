@@ -14,6 +14,11 @@
   z-index: 1000;
 }
 
+.transparent {
+  background-color: transparent;
+  box-shadow: none;
+}
+
 .page-title {
   font-size: 2em;
 }
