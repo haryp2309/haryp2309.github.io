@@ -1,6 +1,5 @@
 .box {
-  background-color: var(--color-p-normal);
-  color: white;
+  background-color: var(--color-p-2);
   border-radius: var(--radius);
   padding: 20px;
   box-shadow: var(--shadow-1);

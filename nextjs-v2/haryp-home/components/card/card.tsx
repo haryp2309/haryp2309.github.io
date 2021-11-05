@@ -1,7 +1,6 @@
 import { RepoData } from "../../typings/repoData";
-import Image from "next/image";
 import styles from "./Card.module.css";
-import githubSvg from "../../icons/github.svg";
+import { GitHubIcon } from "icons/GitHub.icon";
 
 export type CardProps = {
   repoData: RepoData;
@@ -23,13 +22,7 @@ export const Card: React.FC<CardProps> = (props: CardProps) => {
       <div className={styles["name"]}>{name}</div>
       <div>{description}</div>
       <div className={styles["repo-provider-logo-container"]}>
-        <Image
-          className={styles["repo-provider-logo"]}
-          alt="Repo provider logo"
-          src={githubSvg}
-          height="30px"
-          width="30px"
-        />
+        <GitHubIcon className={styles["repo-provider-logo"]} />
       </div>
     </a>
   );

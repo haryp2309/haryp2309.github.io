@@ -13,9 +13,7 @@ export const Chip: React.FC<ChipProps> = (props: ChipProps) => {
 
   return (
     <div
-      className={`${className} ${styles.chip} clickable ${
-        active ? styles.active : ""
-      }`}
+      className={`${className} ${styles.chip} ${active ? styles.active : ""}`}
       onClick={onClick}
     >
       {label}

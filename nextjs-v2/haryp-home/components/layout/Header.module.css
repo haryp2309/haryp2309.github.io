@@ -2,9 +2,8 @@
   position: sticky;
   top: 0;
   width: 100%;
-  background: var(--color-p-light);
+  background: var(--color-p-3);
   height: 100px;
-  color: white;
   box-shadow: var(--shadow-1);
   display: flex;
   align-items: center;

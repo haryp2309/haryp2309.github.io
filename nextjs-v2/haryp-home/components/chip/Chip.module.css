@@ -1,6 +1,7 @@
 .chip {
+  composes: clickable from global;
   padding: 10px 15px;
-  background-color: var(--color-p-normal);
+  background-color: var(--color-p-2);
   border-radius: 20px/50%;
 }
 

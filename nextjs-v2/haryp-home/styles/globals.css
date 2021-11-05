@@ -1,10 +1,7 @@
 html,
 body {
   /* Definitions */
-  --color-p-dark: #3c3c3c;
-  --color-p-normal: #4d4d4d;
-  --color-p-light: #595959;
-  --color-tint: rgb(239, 83, 80);
+
   --shadow-1: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   --radius: 5px;
   --container-max-width: 1400px;
@@ -13,8 +10,28 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background: var(--color-p-dark);
-  color: white;
+  background: var(--color-background);
+  color: var(--font-base-color);
+}
+
+body.light {
+  /* LIGHT */
+  --color-p-1: #ffffff;
+  --color-p-2: #e5e5e5;
+  --color-p-3: #ffffff;
+  --color-tint: #ef5350;
+  --color-background: #ffffff;
+  --font-base-color: #2f2f2f;
+  /* LIGHT */
+}
+
+body.dark {
+  --color-background: #4d4d4d;
+  --color-p-1: #3c3c3c;
+  --color-p-2: #4d4d4d;
+  --color-p-3: #595959;
+  --color-tint: rgb(239, 83, 80);
+  --font-base-color: white;
 }
 
 a {
