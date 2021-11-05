@@ -30,11 +30,13 @@ export const Header: NextComponentType = (props: HeaderProps) => {
 
   useEffect(() => {
     const listenerName = "change";
-    const listener = (e) =>
+    const listener = (e: any) =>
       !overrideSystemTheme &&
       (e.matches ? setDarkMode(true) : setDarkMode(false));
     const matcher = matchMedia("(prefers-color-scheme: dark)");
     matcher.addEventListener(listenerName, listener);
+    if (!overrideSystemTheme)
+      matcher.matches ? setDarkMode(true) : setDarkMode(false);
     return () => matcher.removeEventListener(listenerName, listener);
   }, [overrideSystemTheme]);
 

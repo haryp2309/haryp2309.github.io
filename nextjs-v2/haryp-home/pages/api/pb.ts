@@ -13,5 +13,7 @@ export default async function handler(
   const data = await response.json();
   const { avatar_url } = data;
 
-  res.redirect(307, avatar_url);
+  if (avatar_url) res.redirect(307, avatar_url);
+  else res.status(500);
+  console.log("💁", { res });
 }

@@ -1,1 +1,1 @@
-export const FILEPATH = "api";
+export const FILEPATH = "/api";
