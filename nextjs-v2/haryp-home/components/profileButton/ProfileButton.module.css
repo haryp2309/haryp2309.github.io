@@ -8,7 +8,6 @@
   background-color: var(--color-tint);
   background-image: url("/api/pb"); /* TODO: Use constant */
   background-size: cover;
-  box-shadow: var(--shadow-1);
 }
 
 .circle:hover {

@@ -5,6 +5,8 @@ body {
   --shadow-1: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   --radius: 5px;
   --container-max-width: 1400px;
+  --gloving-tint-shadow: 0 0 40px 1px var(--color-tint);
+  --trans-all: all 250ms ease-in-out;
 
   padding: 0;
   margin: 0;
@@ -26,7 +28,7 @@ body.light {
 }
 
 body.dark {
-  --color-background: #4d4d4d;
+  --color-background: #3c3c3c;
   --color-p-1: #3c3c3c;
   --color-p-2: #4d4d4d;
   --color-p-3: #595959;
@@ -44,11 +46,23 @@ a {
 }
 
 .trans-all {
-  transition: all 250ms ease-in-out;
+  transition: var(--trans-all);
+}
+
+.clickable {
+  transition: box-shadow 250ms ease-out;
 }
 
 .clickable:hover {
-  filter: brightness(1.1);
+  /* box-shadow: var(--gloving-tint-shadow); */
   cursor: pointer;
   user-select: none;
+}
+
+svg * {
+  transition: var(--trans-all);
+}
+
+* {
+  transition: background 250ms ease-in-out;
 }
