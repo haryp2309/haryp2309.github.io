@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { API_BASE_URL } from "../../constants/user";
+import { getApiBaseURL, ORGANISATIONS, USER_ID } from "../../constants/user";
 import { RepoData } from "../../typings/repoData";
 
 import { FILEPATH as PARENT_FILEPATH } from ".";
@@ -7,7 +7,6 @@ import { generateOptions, getData } from "helpers/api.helpers";
 export const FILEPATH = PARENT_FILEPATH + "/repos";
 
 export const fetchRepoData = async () => {
-  const url = `${API_BASE_URL}/repos`;
   type ResponseType = {
     name: string;
     description: string;
@@ -15,11 +14,21 @@ export const fetchRepoData = async () => {
     id: string;
     topics: string[];
   }[];
-  let data = await getData<ResponseType>(url);
 
-  if (!Array.isArray(data)) data = [];
+  const resData = [USER_ID, ...ORGANISATIONS].map(
+    async (id): Promise<ResponseType> => {
+      const url = `${getApiBaseURL(id)}/repos`;
+      const data = await getData<ResponseType>(url);
+      return Array.isArray(data) ? data : [];
+    }
+  );
 
-  const repoDatas: RepoData[] = data.map(
+  const combinedData = (await Promise.all(resData)).reduce(
+    (a, b) => [...a, ...b],
+    []
+  );
+
+  const repoDatas: RepoData[] = combinedData.map(
     ({ name, description, html_url, id, topics }) => ({
       description,
       name,

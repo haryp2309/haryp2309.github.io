@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { API_BASE_URL } from "../../constants/user";
+import { getApiBaseURL, USER_ID } from "../../constants/user";
 
 import { FILEPATH as PARENT_FILEPATH } from ".";
 import { generateOptions } from "helpers/api.helpers";
@@ -9,7 +9,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const response = await fetch(API_BASE_URL, generateOptions("GET"));
+  const response = await fetch(getApiBaseURL(USER_ID), generateOptions("GET"));
   const data = await response.json();
   const { avatar_url } = data;
 
