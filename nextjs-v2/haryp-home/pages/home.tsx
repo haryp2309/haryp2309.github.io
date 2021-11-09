@@ -10,6 +10,8 @@ import { WeeklyActivity } from "typings/weeklyActivity";
 import { fetchWeeklyActivity } from "./api/userActivity";
 import { CommitChart } from "components/commitChart";
 import Header from "next/head";
+import { useMobileScreen } from "hooks/mobileScreen";
+import { SocialMediaButtons } from "components/socialMediaButtons";
 
 type HomeProps = {
   repos: RepoData[];
@@ -20,6 +22,7 @@ const Home: NextPage<HomeProps> = (props) => {
   const { repos, weeklyActivities } = props;
   const [topics, setTopics] = useState<string[]>([]);
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
+  const isMobile = useMobileScreen();
 
   useEffect(() => {
     const newTopics: string[] = [];
@@ -72,6 +75,7 @@ const Home: NextPage<HomeProps> = (props) => {
       </Header>
       <motion.div className={styles.container}>
         <div className={styles["centered-container"]}>
+          {isMobile && <SocialMediaButtons />}
           <h1>Commits {new Date().getFullYear()}</h1>
           <div className={styles.container}>
             <CommitChart weeklyActivities={weeklyActivities} />

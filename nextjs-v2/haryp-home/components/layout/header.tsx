@@ -5,6 +5,8 @@ import { useCallback, useEffect, useState } from "react";
 import { useScrollDirection } from "../../hooks/scrollDirection";
 import { ProfileButton } from "../profileButton";
 import { Toggle } from "components/toggle";
+import { SocialMediaButtons } from "components/socialMediaButtons";
+import { useMobileScreen } from "hooks/mobileScreen";
 
 export type HeaderProps = {
   children?: React.ReactNode;
@@ -15,6 +17,7 @@ export const Header: NextComponentType = (props: HeaderProps) => {
   const [darkMode, setDarkMode] = useState(false);
   const [overrideSystemTheme, setOverrideSystemTheme] = useState(false);
   const [title, setTitle] = useState("");
+  const isMobile = useMobileScreen();
 
   const showHeader = scrollingDirection == "up";
 
@@ -65,6 +68,7 @@ export const Header: NextComponentType = (props: HeaderProps) => {
     >
       <h1 className={styles["page-title"]}>{title}</h1>
       <div className={styles["space"]} />
+      {!isMobile && <SocialMediaButtons />}
       <Toggle onToggle={handleToggle} checked={darkMode} />
       <ProfileButton />
     </motion.header>
