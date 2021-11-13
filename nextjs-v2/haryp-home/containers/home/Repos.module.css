@@ -1,0 +1,20 @@
+.card-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.card-wrapper {
+  display: flex;
+}
+
+.card-wrapper a {
+  width: 100%;
+}
