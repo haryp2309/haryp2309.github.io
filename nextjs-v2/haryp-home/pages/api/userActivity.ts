@@ -11,9 +11,6 @@ type WeeklyActivityReponse = {
   weeklyActivities: WeeklyActivity[];
 };
 
-export const getWeeklyActivity = async (): Promise<WeeklyActivity[]> =>
-  (await getData<WeeklyActivityReponse>(FILEPATH)).weeklyActivities;
-
 export const fetchWeeklyActivity = async (
   year: number
 ): Promise<WeeklyActivityReponse> => {
@@ -47,7 +44,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { interval = "week", year = 2021 } = req.query;
+  const { interval = "week", year = new Date().getFullYear() } = req.query;
 
   switch (interval) {
     default:
