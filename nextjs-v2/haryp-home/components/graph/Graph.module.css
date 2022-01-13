@@ -1,0 +1,38 @@
+.svg {
+  height: 1000px;
+  width: 2000px;
+}
+
+.circle {
+  opacity: 0;
+  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 100ms;
+  fill: transparent;
+  stroke: red;
+}
+
+.graph {
+  stroke: var(--color-tint);
+  stroke-width: 5px;
+  fill: url(#MyGradient);
+  mask: url("#MyMask");
+}
+
+@keyframes graphDrawEffect {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+.mask-rect {
+  animation: graphDrawEffect 2000ms ease-in-out;
+  transform: translate(100%, 0);
+}
+
+.circle:hover {
+  opacity: 1;
+}
