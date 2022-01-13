@@ -2,6 +2,7 @@ import { USER_ID } from "constants/user";
 import { generateOptions, getData } from "helpers/api.helpers";
 import { NextApiRequest, NextApiResponse } from "next";
 import { WeeklyActivity } from "typings/weeklyActivity";
+import mockResponse from "../../mockResponses/userActivity.json";
 
 import { FILEPATH as PARENT_FILEPATH } from ".";
 export const FILEPATH = PARENT_FILEPATH + "/userActivity";
@@ -16,6 +17,10 @@ export const getWeeklyActivity = async (): Promise<WeeklyActivity[]> =>
 export const fetchWeeklyActivity = async (
   year: number
 ): Promise<WeeklyActivityReponse> => {
+  if (process.env.NODE_ENV === "development") {
+    return mockResponse;
+  }
+
   type Data = {
     contributions: { week: number; days: { count: number }[] }[];
   };

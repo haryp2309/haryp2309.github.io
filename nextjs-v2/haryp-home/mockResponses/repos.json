@@ -1,0 +1,113 @@
+[
+  {
+    "description": "Native Android app where the goal is to make a better transportation app for Trondheim, Norway. Was previously based on React Native but converted to native app to increase performance. ",
+    "name": "atbetter",
+    "url": "https://github.com/haryp2309/atbetter",
+    "id": 436423018,
+    "highlighted": true,
+    "topics": ["kotlin"]
+  },
+  {
+    "description": "School project in high school where we were supposed to build an static HTML/CSS/JS based homepage for an fitness center.",
+    "name": "come-on-fitness",
+    "url": "https://github.com/haryp2309/come-on-fitness",
+    "id": 164404455,
+    "highlighted": false,
+    "topics": ["css", "frontend", "html", "school-project"]
+  },
+  {
+    "description": "Desktop app for GitPod (within the NTNU domain) based on electron. This app is deprecated for now. ",
+    "name": "gitpod-desktop-ntnu",
+    "url": "https://github.com/haryp2309/gitpod-desktop-ntnu",
+    "id": 312818143,
+    "highlighted": false,
+    "topics": ["electron"]
+  },
+  {
+    "description": "A simple hobby-project to create a beautiful website for my other projects. Old version is based on react and hosted at haryp2309.github.io. The new version is hosted at haryp2309.vercel.app and is based on NextJS. The goal is to learn writing clean structured code only using simple CSS-modules and HTML components in NextJS.",
+    "name": "haryp2309.github.io",
+    "url": "https://github.com/haryp2309/haryp2309.github.io",
+    "id": 148059648,
+    "highlighted": true,
+    "topics": ["frontend", "nextjs", "react", "typescript"]
+  },
+  {
+    "description": "Simple JavaFX based app that manages work shift planning. Contains both frontend code and backend code which is connected via a REST-API. This was a group assignment in the subject Information technology IT1901 (NTNU).",
+    "name": "jobblett-it1901-ntnu",
+    "url": "https://github.com/haryp2309/jobblett-it1901-ntnu",
+    "id": 331700078,
+    "highlighted": true,
+    "topics": [
+      "backend",
+      "frontend",
+      "java",
+      "javafx",
+      "jersey",
+      "rest-api",
+      "school-project"
+    ]
+  },
+  {
+    "description": "Just a simple rest server running JDBC. Was created to learn Kotlin and Springboot.",
+    "name": "kotlin-springboot-simple-rest-server",
+    "url": "https://github.com/haryp2309/kotlin-springboot-simple-rest-server",
+    "id": 425106206,
+    "highlighted": false,
+    "topics": ["backend", "jdbc", "kotlin", "rest-api", "springboot"]
+  },
+  {
+    "description": "This is a HTML/CSS project to generate my CV with personlized styling. Still work in progress.",
+    "name": "my-cv",
+    "url": "https://github.com/haryp2309/my-cv",
+    "id": 403752684,
+    "highlighted": false,
+    "topics": ["css", "html", "javascript"]
+  },
+  {
+    "description": "Project for TDT4145 in 2021 Q1. The goal is to learn how MySQL Server can be conencted to a Java-project. In this project, we are developing Piazza-like forum with JavaFX, running on a local MySQL-server.",
+    "name": "mysql-database-project-tdt4145",
+    "url": "https://github.com/haryp2309/mysql-database-project-tdt4145",
+    "id": 348048151,
+    "highlighted": false,
+    "topics": ["java", "mysql"]
+  },
+  {
+    "description": "Røddi is a react and firebase based web application that distributes estates. This is the final assignment in the subject Software development - TDT4140 (NTNU). The app is hosted at https://roddi-dev-91fcb.web.app/.",
+    "name": "roddi-tdt4140",
+    "url": "https://github.com/haryp2309/roddi-tdt4140",
+    "id": 425112169,
+    "highlighted": true,
+    "topics": ["firebase", "frontend", "react", "school-project", "typescript"]
+  },
+  {
+    "description": "Static page showing current week number. Just a test project created in React-Kotlin/JS.",
+    "name": "week-number-webpage",
+    "url": "https://github.com/haryp2309/week-number-webpage",
+    "id": 443157379,
+    "highlighted": false,
+    "topics": ["kotlin", "kotlin-js-react", "react", "styled-components"]
+  },
+  {
+    "description": "Depreciated: Moved to https://github.com/haryp2309/atbetter",
+    "name": "atbetter",
+    "url": "https://github.com/Garasje-folka/atbetter",
+    "id": 415123488,
+    "highlighted": false,
+    "topics": ["android", "kotlin", "mobile-app", "react-native", "typescript"]
+  },
+  {
+    "description": "Booking system for the company Bartstua. The app is written in React and TypeScript, using Firebase as backend. Stripe is being used for payment. ",
+    "name": "bartstua",
+    "url": "https://github.com/Garasje-folka/bartstua",
+    "id": 367708392,
+    "highlighted": true,
+    "topics": [
+      "firebase",
+      "frontend",
+      "react",
+      "stripe",
+      "styled-components",
+      "typescript"
+    ]
+  }
+]

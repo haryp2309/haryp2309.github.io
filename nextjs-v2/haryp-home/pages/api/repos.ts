@@ -1,12 +1,17 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getApiBaseURL, ORGANISATIONS, USER_ID } from "../../constants/user";
 import { RepoData } from "../../typings/repoData";
+import mockResponse from "../../mockResponses/repos.json";
 
 import { FILEPATH as PARENT_FILEPATH } from ".";
 import { generateOptions, getData } from "helpers/api.helpers";
 export const FILEPATH = PARENT_FILEPATH + "/repos";
 
 export const fetchRepoData = async () => {
+  if (process.env.NODE_ENV === "development") {
+    return mockResponse;
+  }
+
   type ResponseType = {
     name: string;
     description: string;
@@ -38,6 +43,7 @@ export const fetchRepoData = async () => {
       topics: topics.filter((topic) => topic !== "highlight"),
     })
   );
+
   return repoDatas;
 };
 
