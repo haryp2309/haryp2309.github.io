@@ -65,6 +65,10 @@ svg * {
   transition: var(--trans-all);
 }
 
+h1 {
+  font-size: 3em;
+}
+
 * {
   transition: background 250ms ease-in-out;
 }
