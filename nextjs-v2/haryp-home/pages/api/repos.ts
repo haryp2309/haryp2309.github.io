@@ -7,7 +7,7 @@ import { FILEPATH as PARENT_FILEPATH } from ".";
 import { generateOptions, getData } from "helpers/api.helpers";
 export const FILEPATH = PARENT_FILEPATH + "/repos";
 
-export const fetchRepoData = async () => {
+export const fetchRepoData = async (): Promise<RepoData[]> => {
   if (process.env.NODE_ENV === "development") {
     return mockResponse;
   }
@@ -16,7 +16,7 @@ export const fetchRepoData = async () => {
     name: string;
     description: string;
     html_url: string;
-    id: string;
+    id: number;
     topics: string[];
   }[];
 
