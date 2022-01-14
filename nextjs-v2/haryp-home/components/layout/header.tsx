@@ -1,12 +1,12 @@
-import styles from "./Header.module.css";
+import { SocialMediaButtons } from "components/socialMediaButtons";
+import { Toggle } from "components/toggle";
 import { motion } from "framer-motion";
+import { useMobileScreen } from "hooks/mobileScreen";
 import { NextComponentType } from "next";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useScrollDirection } from "../../hooks/scrollDirection";
 import { ProfileButton } from "../profileButton";
-import { Toggle } from "components/toggle";
-import { SocialMediaButtons } from "components/socialMediaButtons";
-import { useMobileScreen } from "hooks/mobileScreen";
+import styles from "./Header.module.css";
 
 export type HeaderProps = {
   children?: React.ReactNode;
@@ -18,8 +18,6 @@ export const Header: NextComponentType = (props: HeaderProps) => {
   const [overrideSystemTheme, setOverrideSystemTheme] = useState(false);
   const [title, setTitle] = useState("");
   const isMobile = useMobileScreen();
-
-  const showHeader = scrollingDirection == "up";
 
   const transparentClassName = scrollLevel < 50 ? styles.transparent : "";
 

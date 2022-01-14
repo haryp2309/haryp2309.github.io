@@ -1,5 +1,9 @@
-import { CommitChart } from "components/commitChart";
+import { SkillsAndTechnologies } from "components/skillsAndTechnologies/skillsAndTechnologies";
+import { useMobileScreen } from "hooks/mobileScreen";
+import { useLocale } from "hooks/useLocale";
+import { FILEPATH as ProfilePictureUrl } from "pages/api/pb";
 import { WeeklyActivity } from "typings/weeklyActivity";
+import s from "./AboutMe.module.css";
 
 export type AboutMeProps = {
   className?: string;
@@ -9,10 +13,25 @@ export type AboutMeProps = {
 export const AboutMe: React.FC<AboutMeProps> = (props: AboutMeProps) => {
   const { className, weeklyActivities } = props;
 
+  const { t } = useLocale();
+  const isMobile = useMobileScreen();
+
   return (
     <section className={className}>
-      <h1>Commits {new Date().getFullYear()}</h1>
-      <CommitChart weeklyActivities={weeklyActivities} />
+      <div className={s.container}>
+        <div className={s["left-column"]}>
+          <h1>{t("hiThere")}</h1>
+          <p>{t("aboutMe")}</p>
+          <SkillsAndTechnologies />
+        </div>
+        {!isMobile && (
+          <div className={s["right-column"]}>
+            <div className={s["pb-container"]}>
+              <img src={ProfilePictureUrl} className={s.pb} />
+            </div>
+          </div>
+        )}
+      </div>
     </section>
   );
 };

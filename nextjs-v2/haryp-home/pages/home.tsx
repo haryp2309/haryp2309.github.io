@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   ).weeklyActivities;
 
   return {
-    props: { repos, weeklyActivities },
+    props: { repos, weeklyActivities } as HomeProps,
     revalidate: 10,
   };
 };

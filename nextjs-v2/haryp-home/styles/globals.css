@@ -1,41 +1,71 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  font-size: 1em;
+}
 
 html,
 body {
   /* Definitions */
 
   --shadow-1: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --radius: 5px;
+  --text-shadow-1: 0px 5px 10px var(--font-shadow-color);
+  --radius-1: 20px;
   --container-max-width: 1400px;
   --gloving-tint-shadow: 0 0 40px 1px var(--color-tint);
   --trans-all: all 250ms ease-in-out;
+  --black: #2f2f2f;
+  --white: white;
 
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background: var(--color-background);
+  font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--color-background);
+  background-image: url("../assets/blob3.svg"), var(--gradient-background);
+  background-position-x: right, center;
+  background-position-y: top, center;
+  background-size: 900px, auto;
+  background-repeat: no-repeat, initial;
   color: var(--font-base-color);
+  overflow-x: hidden;
 }
 
 body.light {
-  /* LIGHT */
   --color-p-1: #ffffff;
   --color-p-2: #e5e5e5;
   --color-p-3: #ffffff;
   --color-tint: #ef5350;
+  --color-tint-gradient: linear-gradient(
+    45deg,
+    var(--color-tint) 0%,
+    #e46c6a 100%
+  );
   --color-background: #ffffff;
-  --font-base-color: #2f2f2f;
-  /* LIGHT */
+  --gradient-background: none;
+  --font-base-color: var(--black);
+  --font-shadow-color: var(--white);
 }
 
 body.dark {
   --color-background: #3c3c3c;
+  --gradient-background: linear-gradient(
+    45deg,
+    #292929 0%,
+    var(--color-background) 100%
+  );
   --color-p-1: #3c3c3c;
   --color-p-2: #4d4d4d;
   --color-p-3: #595959;
   --color-tint: rgb(239, 83, 80);
-  --font-base-color: white;
+  --color-tint-gradient: linear-gradient(
+    45deg,
+    var(--color-tint) 0%,
+    #ce6260 100%
+  );
+  --font-base-color: var(--white);
+  --font-shadow-color: var(--black);
 }
 
 a {
@@ -66,7 +96,17 @@ svg * {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em;
+}
+
+h1,
+h2,
+h3 {
+  text-shadow: var(--text-shadow-1);
+}
+
+p {
+  font-size: 1.1em;
 }
 
 * {

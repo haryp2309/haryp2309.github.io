@@ -1,0 +1,56 @@
+.container {
+  background-image: linear-gradient(45deg, rgb(27, 27, 27) 100%, black 0%);
+  border-radius: var(--radius-1);
+  box-shadow: var(--shadow-1);
+  padding: 30px;
+  width: 800px;
+  font-family: Source Code Pro;
+  line-height: 2em;
+  height: 300px;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.container.mobile {
+  width: 100%;
+  font-size: 0.8em;
+  height: fit-content;
+}
+
+.tabbed {
+  padding-left: 2em;
+}
+
+.fake-system-button-group {
+  display: flex;
+  gap: 10px;
+  opacity: 0.5;
+  width: fit-content;
+  transition: opacity 100ms;
+}
+
+.fake-system-button {
+  width: 16px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.fake-system-button-group:hover {
+  opacity: 1;
+}
+
+.red {
+  background-color: #ff605c;
+}
+.green {
+  background-color: #00ca4e;
+}
+.yellow {
+  background-color: #ffbd40;
+}
+
+.green-code {
+  color: #ff5722;
+}

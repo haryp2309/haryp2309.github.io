@@ -1,7 +1,7 @@
 .box {
   background-color: var(--color-p-2);
-  border-radius: var(--radius);
-  padding: 20px;
+  border-radius: var(--radius-1);
+  padding: 30px;
   box-shadow: var(--shadow-1);
 
   display: flex;
@@ -10,7 +10,12 @@
 }
 
 .name {
-  font-size: 1.5em;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.description {
+  overflow-wrap: break-word;
 }
 
 .repo-provider-logo-container {
@@ -26,5 +31,6 @@
 }
 
 .highlighted {
-  background-color: var(--color-tint);
+  background-image: var(--color-tint-gradient);
+  color: var(--white);
 }

@@ -2,6 +2,7 @@ import { Card } from "components/card";
 import { Chip } from "components/chip";
 import { AnimatePresence, motion } from "framer-motion";
 import { useMobileScreen } from "hooks/mobileScreen";
+import { useLocale } from "hooks/useLocale";
 import { useEffect, useState } from "react";
 import { RepoData } from "typings/repoData";
 import styles from "./Repos.module.css";
@@ -17,6 +18,7 @@ export const Repos: React.FC<ReposProps> = (props: ReposProps) => {
   const [topics, setTopics] = useState<string[]>([]);
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const isMobile = useMobileScreen();
+  const { t } = useLocale();
 
   useEffect(() => {
     const newTopics: string[] = [];
@@ -64,7 +66,8 @@ export const Repos: React.FC<ReposProps> = (props: ReposProps) => {
 
   return (
     <section className={className}>
-      <h1>Repos</h1>
+      <h1>{t("repos")}</h1>
+      <h2>{t("filters")}</h2>
       <div className={styles["chips-container"]}>
         {topics.map((label) => (
           <Chip
@@ -75,10 +78,19 @@ export const Repos: React.FC<ReposProps> = (props: ReposProps) => {
           />
         ))}
       </div>
-      <h2>Highlighted</h2>
-      <div className={styles["card-grid"]}>{generateRepoCards(true)}</div>
-      <h2>Other</h2>
-      <div className={styles["card-grid"]}>{generateRepoCards(false)}</div>
+      <h2>{t("highlighted")}</h2>
+
+      <div
+        className={`${styles["card-grid"]} ${isMobile ? styles.mobile : ""}`}
+      >
+        {generateRepoCards(true)}
+      </div>
+      <h2>{t("other")}</h2>
+      <div
+        className={`${styles["card-grid"]} ${isMobile ? styles.mobile : ""}`}
+      >
+        {generateRepoCards(false)}
+      </div>
     </section>
   );
 };

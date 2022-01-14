@@ -11,6 +11,7 @@
   box-sizing: border-box;
   z-index: 1000;
   font-family: "Source Code Pro", monospace;
+  border-radius: 0 0 var(--radius-1) var(--radius-1);
 }
 
 .transparent {

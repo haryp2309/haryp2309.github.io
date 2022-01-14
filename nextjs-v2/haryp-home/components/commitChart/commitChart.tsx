@@ -1,13 +1,12 @@
-import { WeeklyActivity } from "typings/weeklyActivity";
 import {
   Area,
   AreaChart,
-  CartesianGrid,
   ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
 } from "recharts";
+import { WeeklyActivity } from "typings/weeklyActivity";
 import styles from "./CommitChart.module.css";
 
 export type CommitChartProps = {
@@ -46,7 +45,7 @@ export const CommitChart: React.FC<CommitChartProps> = (
           contentStyle={{
             background: "var(--color-p-1)",
             borderColor: "var(--color-tint)",
-            borderRadius: "var(--radius)",
+            borderRadius: "var(--radius-1)",
           }}
         />
         <Area
