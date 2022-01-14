@@ -4,5 +4,7 @@
   "repos": "Repos",
   "highlighted": "Highlighted",
   "other": "Other",
+  "showAll": "Show all",
+  "showLess": "Show less",
   "filters": "Filters"
 }

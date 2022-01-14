@@ -12,6 +12,7 @@
   flex-wrap: wrap;
   margin: 20px 0;
   gap: 10px;
+  align-items: center;
 }
 
 .card-wrapper {
@@ -20,4 +21,14 @@
 
 .card-wrapper a {
   width: 100%;
+}
+
+.show-all-button {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.show-all-button:hover {
+  text-decoration: underline;
+  opacity: 1;
 }

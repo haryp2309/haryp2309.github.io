@@ -17,17 +17,24 @@ export const Repos: React.FC<ReposProps> = (props: ReposProps) => {
 
   const [topics, setTopics] = useState<string[]>([]);
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
+  const [showAllTopics, setShowAllTopics] = useState(false);
   const isMobile = useMobileScreen();
   const { t } = useLocale();
 
   useEffect(() => {
-    const newTopics: string[] = [];
+    const newTopics: { name: string; count: number }[] = [];
     repos.forEach(({ topics }) => {
       topics.forEach((topic) => {
-        if (!newTopics.includes(topic)) newTopics.push(topic);
+        const existingTopic = newTopics.find(
+          (existing) => existing.name === topic
+        );
+        if (existingTopic) existingTopic.count += 1;
+        else newTopics.push({ name: topic, count: 0 });
       });
     });
-    setTopics(newTopics);
+    setTopics(
+      newTopics.sort((a, b) => b.count - a.count).map(({ name }) => name)
+    );
   }, [repos]);
 
   const toggleTopic = (topic: string) => () => {
@@ -69,7 +76,7 @@ export const Repos: React.FC<ReposProps> = (props: ReposProps) => {
       <h1>{t("repos")}</h1>
       <h2>{t("filters")}</h2>
       <div className={styles["chips-container"]}>
-        {topics.map((label) => (
+        {(showAllTopics ? topics : topics.slice(0, 8)).map((label) => (
           <Chip
             key={label}
             label={label}
@@ -77,6 +84,12 @@ export const Repos: React.FC<ReposProps> = (props: ReposProps) => {
             active={selectedTopics.includes(label)}
           />
         ))}
+        <a
+          className={styles["show-all-button"]}
+          onClick={() => setShowAllTopics((v) => !v)}
+        >
+          {t(showAllTopics ? "showLess" : "showAll")}
+        </a>
       </div>
       <h2>{t("highlighted")}</h2>
 

@@ -20,7 +20,7 @@ export const Card: React.FC<CardProps> = (props: CardProps) => {
       <div className={s["name"]}>{name}</div>
       <div className={s.description}>{description}</div>
       <div className={s["repo-provider-logo-container"]}>
-        <GitHubIcon white className={s["repo-provider-logo"]} />
+        <GitHubIcon white={highlighted} className={s["repo-provider-logo"]} />
       </div>
     </a>
   );
