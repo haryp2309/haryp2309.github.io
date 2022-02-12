@@ -11,7 +11,7 @@ export type AboutMeProps = {
 };
 
 export const AboutMe: React.FC<AboutMeProps> = (props: AboutMeProps) => {
-  const { className, weeklyActivities } = props;
+  const { className } = props;
 
   const { t } = useLocale();
   const isMobile = useMobileScreen();
@@ -27,6 +27,7 @@ export const AboutMe: React.FC<AboutMeProps> = (props: AboutMeProps) => {
         {!isMobile && (
           <div className={s["right-column"]}>
             <div className={s["pb-container"]}>
+              <div className={s["pb-outer-bg"]} />
               <img src={ProfilePictureUrl} className={s.pb} />
             </div>
           </div>

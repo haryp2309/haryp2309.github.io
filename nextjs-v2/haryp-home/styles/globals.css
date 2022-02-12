@@ -23,13 +23,18 @@ body {
   font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: var(--color-background);
-  background-image: url("../assets/blob3.svg"), var(--gradient-background);
   background-position-x: right, center;
   background-position-y: top, center;
   background-size: 900px, auto;
   background-repeat: no-repeat, initial;
   color: var(--font-base-color);
   overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: url("../assets/blob3.svg"), var(--gradient-background);
+  }
 }
 
 body.light {

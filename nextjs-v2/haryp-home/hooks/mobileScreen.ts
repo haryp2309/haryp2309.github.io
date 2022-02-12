@@ -16,7 +16,7 @@ const useMobileScreen = () => {
     };
   }, []);
 
-  return width <= 700;
+  return width <= 768;
 };
 
 export { useMobileScreen };
