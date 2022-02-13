@@ -13,7 +13,7 @@ export const SkillsAndTechnologies: React.FC<Props> = (props: Props) => {
   const [loadingLength, setLoadingLength] = useState(0);
   const isMobile = useMobileScreen();
 
-  const command = "echo aboutMe.json";
+  const command = "cat aboutMe.json";
   const loading = "..........";
 
   useEffect(() => {
