@@ -1,0 +1,13 @@
+services:
+  web:
+    image: node:17
+    build: .
+    command: bash -c "yarn && yarn dev"
+    volumes:
+      - .:/usr/app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    working_dir: /usr/app
+    
