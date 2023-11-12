@@ -10,6 +10,7 @@ import styles from "../styles/Home.module.css";
 import { RepoData } from "../typings/repoData";
 import { fetchRepoData } from "./api/repos";
 import { fetchWeeklyActivity } from "./api/userActivity";
+import { useEffect, useState } from "react";
 
 type HomeProps = {
   repos: RepoData[];
@@ -18,6 +19,13 @@ type HomeProps = {
 
 const Home: NextPage<HomeProps> = (props) => {
   const { repos, weeklyActivities } = props;
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 500);
+  }, []);
 
   const isMobile = useMobileScreen();
 
@@ -26,13 +34,13 @@ const Home: NextPage<HomeProps> = (props) => {
       <Header>
         <title>{"Hary Pirajan's projects"}</title>
       </Header>
-      <motion.div className={styles.container}>
+      <div className={styles.container}>
         <div className={styles["centered-container"]}>
           {isMobile && <SocialMediaButtons />}
           <AboutMe weeklyActivities={weeklyActivities} />
           <Repos repos={repos} />
         </div>
-      </motion.div>
+      </div>
     </>
   );
 };

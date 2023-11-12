@@ -1,6 +1,5 @@
 import { SocialMediaButtons } from "components/socialMediaButtons";
 import { Toggle } from "components/toggle";
-import { motion } from "framer-motion";
 import { useMobileScreen } from "hooks/mobileScreen";
 import { NextComponentType } from "next";
 import { useEffect, useState } from "react";
@@ -13,13 +12,10 @@ export type HeaderProps = {
 };
 
 export const Header: NextComponentType = (props: HeaderProps) => {
-  const { scrollingDirection, scrollLevel } = useScrollDirection(50);
   const [darkMode, setDarkMode] = useState(false);
   const [overrideSystemTheme, setOverrideSystemTheme] = useState(false);
   const [title, setTitle] = useState("");
   const isMobile = useMobileScreen();
-
-  const transparentClassName = scrollLevel < 50 ? styles.transparent : "";
 
   useEffect(() => {
     document
@@ -58,17 +54,12 @@ export const Header: NextComponentType = (props: HeaderProps) => {
   };
 
   return (
-    <motion.header
-      initial={false}
-      animate={{ y: true ? 0 : "-100%" }}
-      transition={{ duration: 0.2 }}
-      className={`${styles.header} ${transparentClassName} trans-all`}
-    >
+    <header className={`${styles.header} trans-all`}>
       <h1 className={styles["page-title"]}>{title}</h1>
       <div className={styles["space"]} />
       {!isMobile && <SocialMediaButtons />}
       <Toggle onToggle={handleToggle} checked={darkMode} />
       <ProfileButton />
-    </motion.header>
+    </header>
   );
 };

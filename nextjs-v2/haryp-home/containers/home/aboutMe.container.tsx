@@ -27,7 +27,9 @@ export const AboutMe: React.FC<AboutMeProps> = (props: AboutMeProps) => {
         {!isMobile && (
           <div className={s["right-column"]}>
             <div className={s["pb-container"]}>
-              <div className={s["pb-outer-bg"]} />
+              <div className={s["blur-effect"]}>
+                <img src={ProfilePictureUrl} className={s["blur-img"]} />
+              </div>
               <img src={ProfilePictureUrl} className={s.pb} />
             </div>
           </div>

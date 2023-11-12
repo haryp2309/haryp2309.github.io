@@ -10,6 +10,7 @@ body {
   /* Definitions */
 
   --shadow-1: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-tinted: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   --text-shadow-1: 0px 5px 10px var(--font-shadow-color);
   --radius-1: 20px;
   --container-max-width: 1400px;
@@ -23,18 +24,12 @@ body {
   font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: var(--color-background);
+  background: var(--gradient-background);
   background-position-x: right, center;
   background-position-y: top, center;
-  background-size: 900px, auto;
   background-repeat: no-repeat, initial;
   color: var(--font-base-color);
   overflow-x: hidden;
-}
-
-@media (max-width: 768px) {
-  body {
-    background-image: url("../assets/blob3.svg"), var(--gradient-background);
-  }
 }
 
 body.light {
@@ -56,21 +51,23 @@ body.light {
 body.dark {
   --color-background: #3c3c3c;
   --gradient-background: linear-gradient(
-    45deg,
-    #292929 0%,
-    var(--color-background) 100%
+    43deg,
+    #090c1d 0%,
+    #0f1824 46%,
+    #1e040e 100%
   );
   --color-p-1: #3c3c3c;
   --color-p-2: #4d4d4d;
   --color-p-3: #595959;
-  --color-tint: rgb(239, 83, 80);
+  --color-tint: rgb(196, 62, 60);
   --color-tint-gradient: linear-gradient(
     45deg,
     var(--color-tint) 0%,
-    #ce6260 100%
+    #a64341 100%
   );
   --font-base-color: var(--white);
   --font-shadow-color: var(--black);
+  --shadow-tinted: 0px 0px 30px 0px rgba(239, 83, 80, 0.3);
 }
 
 a {

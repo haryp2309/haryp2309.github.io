@@ -33,4 +33,5 @@
 .highlighted {
   background-image: var(--color-tint-gradient);
   color: var(--white);
+  box-shadow: var(--shadow-tinted);
 }
